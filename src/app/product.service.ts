@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { JsonPipe } from '@angular/common';
 import 'rxjs/add/operator/map';
 import { Album } from './album';
+import { Product } from './product';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
@@ -14,7 +15,7 @@ export class ProductService {
 
   constructor(private _http: Http) { }
 
-  getProducts() : Observable<Products[]> {
+  getProducts() : Observable<Product[]> {
     return this._http.get(this._productsUrl).map((response) => <Product[]>response.json())
   }
 
