@@ -1,6 +1,6 @@
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { map } from 'rxjs/operators';
+// import { map } from 'rxjs/operators';
 import { JsonPipe } from '@angular/common';
 import 'rxjs/add/operator/map';
 
@@ -12,6 +12,6 @@ export class ProductService {
   constructor(private _http: Http) { }
 
   getAlbum(id: Number) {
-    return this._http.get(this._albumUrl).pipe(map(response => (response.json())));
+    return this._http.get(this._albumUrl).map(response => (response.json()));
   }
 }
